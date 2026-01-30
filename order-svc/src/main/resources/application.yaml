@@ -1,0 +1,23 @@
+server:
+  port: 8084
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dborder
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+logging:
+  level:
+    com.xyz.ordersvc.client: DEBUG  # Your Feign client package
+
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: FULL  # NONE, BASIC, HEADERS, FULL
+
